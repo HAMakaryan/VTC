@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="DiamondProjects" device="LAE5U-12F-6BG381E" default_implementation="impl1">
+    <Options/>
+    <Implementation title="impl1" dir="impl1" description="impl1" synthesis="synplify" default_strategy="Strategy1">
+        <Options def_top="ripple_carry_counter"/>
+        <Source name="../source/ripple_carry_counter.v" type="Verilog" type_short="Verilog">
+            <Options top_module="ripple_carry_counter"/>
+        </Source>
+        <Source name="../source/D_FF.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../source/stimulus.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
+            <Options/>
+        </Source>
+        <Source name="../source/T_FF.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="DiamondProjects.lpf" type="Logic Preference" type_short="LPF">
+            <Options/>
+        </Source>
+        <Source name="rcc/rcc.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="rcc_tb/rcc_tb.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="rcc_timing/rcc_timing.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="DiamondProjects1.sty"/>
+</BaliProject>

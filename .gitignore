@@ -1,3 +1,10 @@
-
+temp/
 work/
 impl1/
+homeworks/
+sim/
+*.pui
+*.prj
+DiamondProjects/
+work/
+*.wlf

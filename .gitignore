@@ -3,8 +3,11 @@ work/
 impl1/
 homeworks/
 sim/
+History/
+__Previews/
 *.pui
 *.prj
 DiamondProjects/
 work/
 *.wlf
+*.PrjPcbStructure

@@ -62,11 +62,16 @@ begin
   end
 end
 
-blk_mem_gen_0 init_rom (
-  .clka(clk_i),     // input wire clka
-  .ena(1'b1),       // input wire ena
-  .addra(address),  // input wire [5 : 0] addra
-  .douta(rom_data)  // output wire [12 : 0] douta
+//blk_mem_gen_0 init_rom (
+//  .clka(clk_i),     // input wire clka
+//  .ena(1'b1),       // input wire ena
+//  .addra(address),  // input wire [5 : 0] addra
+//  .douta(rom_data)  // output wire [12 : 0] douta
+//);
+
+dist_mem_gen_0 init_rom (
+  .a(address),      // input wire [5 : 0] a
+  .spo(rom_data)    // output wire [12 : 0] spo
 );
 
 

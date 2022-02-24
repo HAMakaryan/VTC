@@ -1,5 +1,8 @@
 `timescale 1us/100ns
 
+`define SIMULATION
+
+
 module lcd_drv(
   //  System signals
   input         rst_n_i,        //  Active low reset

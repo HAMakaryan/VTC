@@ -114,64 +114,15 @@ begin
   end
 end // always
 
-conditional_adder adder_3_0(
-  .data_i (bcd_data [3:0]),
-  .sum_o  (bcd_shift[3:0])
-);
+genvar i;
 
-conditional_adder adder_7_4(
-  .data_i (bcd_data [7:4]),
-  .sum_o  (bcd_shift[7:4])
-);
-
-conditional_adder adder_11_8(
-  .data_i (bcd_data [11:8]),
-  .sum_o  (bcd_shift[11:8])
-);
-
-conditional_adder adder_15_12(
-  .data_i (bcd_data [15:12]),
-  .sum_o  (bcd_shift[15:12])
-);
-
-conditional_adder adder_19_16(
-  .data_i (bcd_data [19:16]),
-  .sum_o  (bcd_shift[19:16])
-);
-
-conditional_adder adder_23_20(
-  .data_i (bcd_data [23:20]),
-  .sum_o  (bcd_shift[23:20])
-);
-
-conditional_adder adder_27_24(
-  .data_i (bcd_data [27:24]),
-  .sum_o  (bcd_shift[27:24])
-);
-
-conditional_adder adder_31_28(
-  .data_i (bcd_data [31:28]),
-  .sum_o  (bcd_shift[31:28])
-);
-
-conditional_adder adder_35_32(
-  .data_i (bcd_data [35:32]),
-  .sum_o  (bcd_shift[35:32])
-);
-
-conditional_adder adder_39_36(
-  .data_i (bcd_data [39:36]),
-  .sum_o  (bcd_shift[39:36])
-);
-
-always @(posedge clk_i)
-begin
-  if (rstn_i == 1'b0)
-  begin
-    //
-  end else begin
-    //
+generate for (i=0; i<10; i=i+1)
+ begin: r_loop
+    conditional_adder conditional (
+    .data_i (bcd_data [i*4+3:i*4]),
+    .sum_o  (bcd_shift[i*4+3:i*4])
+    );
   end
-end // always
+endgenerate
 
 endmodule

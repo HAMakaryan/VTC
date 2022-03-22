@@ -47,11 +47,11 @@ always @(posedge clk)
 begin
   if (rstn == 1'b0)
   begin
-    bin_data  <= 32'h0;
+    bin_data  = 32'h0;
   end else begin
     if (bin_redy == 1'b1)
     begin
-      bin_data  <= $random;
+      bin_data <= $random;
     end
   end
 end // always
@@ -87,14 +87,5 @@ bcd_32 DUT (
   .bcd_redy_i       (bcd_redy)
 );
 
-always @(posedge clk)
-begin
-  if (rstn == 1'b0)
-  begin
-    //
-  end else begin
-    //
-  end
-end // always
 
 endmodule

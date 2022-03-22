@@ -1,0 +1,24 @@
+# cd D:/GitHub/VTC/projects/UART/srcs
+
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart.v
+vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_rx.v
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_tx.v
+vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/baud_gen.v
+vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/baud_gen_tb.v
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/fifo.v
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/fifo_ctrl.v
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/reg_file.v
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_tb.v
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_top_tb.v
+# vsim -novopt work.Uart_rx_tb
+# vsim -novopt work.uart_tb
+
+# view wave -new -title TOP
+# add wave -position insertpoint sim:/uart_tb/*
+# view wave -new -title UART
+# add wave -position insertpoint sim:/uart_tb/DUT/*
+
+#
+restart -f
+run @1ms
+

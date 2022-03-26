@@ -13,17 +13,17 @@ parameter DBIT    =   8;  // # data bits
 parameter SB_TICK =  16; // # ticks for stop bits
 
 
-localparam idle=2'b00;
-localparam start=2'b01;
-localparam data=2'b10;
-localparam stop=2'b11;
+localparam idle   =2'b00;
+localparam start  =2'b01;
+localparam data   =2'b10;
+localparam stop   =2'b11;
 
 
 reg [1:0] state_reg;
 reg [1:0] state_next;
 reg [4:0] s_reg , s_next;
 reg [2:0] n_reg , n_next;
-reg [7:0] b_reg , b_next;
+reg [DBIT-1:0] b_reg , b_next;
 reg sync1_reg;
 reg sync2_reg;
 wire sync_rx;
@@ -38,7 +38,7 @@ end
 assign sync_rx = sync2_reg;
 
 // FSMD state & data registers
-always @(posedge clk, posedge reset)
+always @(posedge clk)
 begin
   if (reset == 1'b1)
   begin
@@ -46,9 +46,7 @@ begin
     s_reg     <= 5'b0;
     n_reg     <= 3'b0;
     b_reg     <= 8'b0;
-  end
-  else
-  begin
+  end else begin
     state_reg <= state_next;
     s_reg     <= s_next;
     n_reg     <= n_next;
@@ -59,31 +57,28 @@ end
 // next-state logic & data path
 always @(*)
 begin
-  state_next    <= state_reg;
-  s_next        <= s_reg;
-  n_next        <= n_reg;
-  b_next        <= b_reg;
-  rx_done_tick  <= 1'b0;
+  state_next    = state_reg;
+  s_next        = s_reg;
+  n_next        = n_reg;
+  b_next        = b_reg;
+  rx_done_tick  = 1'b0;
 
   case (state_reg)
      idle:
       if (sync_rx == 1'b0)
        begin
-        state_next <= start;
-        s_next <= 5'b0;
+        state_next = start;
+        s_next = 5'b0;
       end
     start:
     if (s_tick == 1'b1)
+      begin if (s_reg == 5'd7)  // center of the start
       begin
-      if (s_reg == 5'd7)  // center of the start
-      begin
-        state_next <= data;
-        s_next <= 5'b0;
-        n_next <= 3'b0;
-      end
-      else
-      begin
-        s_next <= s_reg + 1;
+        state_next = data;
+        s_next = 5'b0;
+        n_next = 3'b0;
+      end else begin
+        s_next = s_reg + 1;
       end
     end
     data:
@@ -91,20 +86,20 @@ begin
       begin
         if (s_reg == 5'd15)
         begin
-          s_next <= 5'b0;
-          b_next <= {sync_rx,  b_reg[7:1]};
+          s_next = 5'b0;
+          b_next = {sync_rx,  b_reg[7:1]};
           if (n_reg == (DBIT - 1))
           begin
-              state_next <= stop;
+              state_next = stop;
           end
           else
           begin
-            n_next <= n_reg + 1;
+            n_next = n_reg + 1;
           end
         end
         else
         begin
-          s_next <= s_reg + 1;
+          s_next = s_reg + 1;
         end
       end
 
@@ -113,18 +108,28 @@ begin
       begin
         if (s_reg == (SB_TICK - 1))
         begin
-          state_next    <= idle;
-          rx_done_tick  <= 1;
+          state_next    = idle;
+          rx_done_tick  = 1;
         end
         else
         begin
-          s_next <= s_reg + 1;
+          s_next = s_reg + 1;
         end
       end
  endcase
 end
 
 assign dout = b_reg;
+
+
+   //Function to calculate log2 of depth
+ function  integer clogb2 (input integer depth);
+    begin
+        for(clogb2=0; depth>0;  clogb2=clogb2+1)
+             depth=depth>>>1;
+    end
+ endfunction // clogb2
+
 
 endmodule
 

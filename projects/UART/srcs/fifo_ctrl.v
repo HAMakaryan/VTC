@@ -27,7 +27,7 @@ wire [ADDR_WIDTH-1:0] w_ptr_succ;
 wire [ADDR_WIDTH-1:0] r_ptr_succ;
 wire [1:0]            wr_op;
 
-always @(posedge clk, posedge reset)
+always @(posedge clk)
 begin
   if (reset == 1'b1)
   begin
@@ -46,10 +46,10 @@ end
 
 always @(*)
 begin
-  w_ptr_next <= w_ptr_reg;
-  r_ptr_next <= r_ptr_reg;
-  full_next  <= full_reg;
-  empty_next <= empty_reg;
+  w_ptr_next = w_ptr_reg;
+  r_ptr_next = r_ptr_reg;
+  full_next  = full_reg;
+  empty_next = empty_reg;
   case(wr_op)
     2'b00:    // NO OP
     begin
@@ -58,11 +58,11 @@ begin
     begin
       if (empty_reg != 1'b1)
       begin
-        r_ptr_next  <= r_ptr_succ;
-        full_next   <= 1'b0;
+        r_ptr_next  = r_ptr_succ;
+        full_next   = 1'b0;
         if (r_ptr_succ == w_ptr_reg)
         begin
-          empty_next <= 1'b1;
+          empty_next = 1'b1;
         end
       end
     end
@@ -70,27 +70,28 @@ begin
     begin
       if(full_reg != 1'b1)
       begin
-        w_ptr_next <= w_ptr_succ;
-        empty_next <= 1'b0;
+        w_ptr_next = w_ptr_succ;
+        empty_next = 1'b0;
         if (w_ptr_succ == r_ptr_reg)
         begin
-          full_next <= 1'b1;
+          full_next = 1'b1;
         end
       end
     end
     default:    // WRITE/READ
     begin
-      w_ptr_next <= w_ptr_succ;
-      r_ptr_next <= r_ptr_succ;
+      w_ptr_next = w_ptr_succ;
+      r_ptr_next = r_ptr_succ;
     end
   endcase
 end
 
-assign wr_op = {wr, rd};
+assign wr_op  = {wr, rd};
+
 assign w_addr = w_ptr_reg;
 assign r_addr = r_ptr_reg;
-assign full = full_reg;
-assign empty = empty_reg;
+assign full   = full_reg;
+assign empty  = empty_reg;
 
 
 assign w_ptr_succ = w_ptr_reg + 1;

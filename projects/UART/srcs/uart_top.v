@@ -18,7 +18,7 @@ wire clk_out1;
 wire locked;
 wire reset = ~locked;
 
-assign wdata = (data > 8'h63)? {data[7:6], 1'b0, data[4:0]} : data;
+assign wdata = (data > 8'h63)? {data | 8'b00100000 } : data;
 
 uart
 #(

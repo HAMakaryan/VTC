@@ -95,7 +95,6 @@ begin
           begin
             s_next <= 5'b0;
             b_next <= {1'b0, b_reg [7:1]};
-
             if (n_reg == DBIT-1)
             begin
               state_next <= STOP;
@@ -125,15 +124,7 @@ begin
         end
       end
   endcase
-
-
-
 end
 
-
-
-
-
 endmodule
-
 

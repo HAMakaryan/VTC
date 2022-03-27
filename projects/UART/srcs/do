@@ -2,14 +2,14 @@
 
 vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart.v
 vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_rx.v
-vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_rx_tb.v
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_rx_tb.v
 vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_tx.v
 vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/baud_gen.v
-vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/baud_gen_tb.v
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/baud_gen_tb.v
 vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/fifo.v
 vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/fifo_ctrl.v
 vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/reg_file.v
-vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_tb.v
+#vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_tb.v
 vlog -reportprogress 300 -work work  D:/GitHub/VTC/projects/UART/srcs/uart_top_tb.v
 # vsim -novopt work.Uart_rx_tb
 # vsim -novopt work.uart_tb

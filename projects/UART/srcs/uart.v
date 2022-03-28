@@ -41,7 +41,7 @@ wire  [ 7:0]    rx_data;
 wire  [ 7:0]    tx_data;
 
 nor (wr_rd_uart,tx_full,rx_empty);
-assign tx_data = rx_data & 8'b1101_1111;
+assign tx_data = (96 < rx_data && 123 > rx_data)? rx_data & 8'b1101_1111 : rx_data;
 
 baud_gen #(
 )

@@ -1,0 +1,6 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=UART2LCD\u2c\u2c.PrjPcb
+[Project2]
+ProjectPath=LCD_BS\LCD_BS.PrjPcb

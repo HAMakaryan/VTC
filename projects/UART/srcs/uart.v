@@ -8,15 +8,15 @@ module uart
   /* System Interface */
   input           clk_in,
   input           resetn,
-//HAM Debug//  input   [10:0]  dvsr,
+  input   [10:0]  dvsr,
   /* Tx Interface */
-// HAM Debug //  input           wr_uart,
-// HAM Debug //  input   [ 7:0]  w_data,
-//  output          tx_full,
+  input           wr_uart,
+  input   [ 7:0]  w_data,
+  output          tx_full,
   /* Rx Interface */
-// HAM Debug //  input           rd_uart,
-//HAM Debug//  output  [ 7:0]  r_data,
-//HAM Debug//  output          rx_empty,
+  input           rd_uart,
+  output  [ 7:0]  r_data,
+  output          rx_empty,
   /* UART Interface */
   input           rx,
   output          tx
@@ -85,8 +85,7 @@ fifo #(
 ) fifo_rx_unit (
   .clk          (sys_clk),
   .reset        (reset),
-// HAM Debug //    .rd           (rd_uart),
-  .rd           (wr_rd_uart),
+  .rd           (rd_uart),
   .wr           (rx_done_tick),
   .w_data       (rx_data_out),
   .empty        (rx_empty),

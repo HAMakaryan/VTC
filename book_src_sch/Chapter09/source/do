@@ -1,0 +1,5 @@
+# cd D:/GitHub/VTC/book_src_sch/Chapter09/source/
+vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter09/source/edge_dff_tb.v
+
+restart -f
+run @1us;

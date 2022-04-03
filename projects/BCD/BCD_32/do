@@ -1,0 +1,12 @@
+# cd D:/GitHub/VTC/projects/BCD/BCD_32
+#vlog -reportprogress 300 -work work D:/GitHub/VTC/projects/BCD/BCD_32/conditional_adder.v
+vlog -reportprogress 300 -work work D:/GitHub/VTC/projects/BCD/BCD_32/bcd_32.v
+vlog -reportprogress 300 -work work D:/GitHub/VTC/projects/BCD/BCD_32/bcd_32_tb.v
+
+
+restart -f
+.main clear
+run @20 us
+
+
+

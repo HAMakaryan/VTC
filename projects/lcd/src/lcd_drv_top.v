@@ -20,6 +20,7 @@ wire ready;
 wire [  8:0]data;
 wire valid;
 
+
 assign read_write_n_o = 1'b0;
 
 lcd_drv u_lcd_drv (

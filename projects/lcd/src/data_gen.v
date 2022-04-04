@@ -3,7 +3,7 @@ module data_gen (
   input             rstn_i,
   output  reg [8:0] data_o,
   output  reg       valid_o,
-  input             ready_i
+  input             ready_i,
 );
 
 

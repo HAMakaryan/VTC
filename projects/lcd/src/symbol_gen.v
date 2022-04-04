@@ -6,7 +6,8 @@ module symbol_gen(
   // Data interface
  input ready_i,
  output [8:0]data_o,
- output data_valid_o
+ output data_valid_o,
+ output init_done
 );
 
 reg [1:0] CurrentState;
@@ -118,5 +119,7 @@ begin
 		  end
 	endcase
 end
+
+assign	dg_done = (data_o = 9'b0)? 1 : 0;
 
 endmodule

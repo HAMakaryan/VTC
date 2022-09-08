@@ -21,10 +21,11 @@ begin
   while (count < 128) //Execute loop till count is 127.
                       //exit at count 128
   begin
-//    $display("Count = %d", count);
+    //$display("Count = %d", count);
     count = count + 1;
     #1;
   end
+  //$display("Exit at count = %d", count);
 end
 
 //Illustration 2: Find the first bit with a value 1 in flag (vector variable)
@@ -38,30 +39,35 @@ reg Continue;
 
 initial
 begin
-  flag = 16'b 0010_0000_0000_0000;
+  flag = 16'b 1000_0000_0000_0000;
   i = 0;
   Continue = `TRUE
   while((i < 16) && Continue ) //Multiple conditions using operators.
   begin
-    if (flag[i])
+    if (flag[i+10])
     begin
-//      $display("Encountered a TRUE bit at element number %d", i);
+      //$display("Encountered a TRUE bit at element number %d", i);
       Continue = `FALSE
     end
     i = i + 1;
   end
+  //$display("ENCOUNTERED a TRUE bit at element number %d", i);
 end
 
 
 /*    Example 7-23 For Loop   */
 
 integer Count;
+
 initial
 begin
-  for ( Count=0; Count < 128; Count = Count + 1)
+  for ( Count=-1; Count > 128; Count = Count - 1)
   begin
-    $display("COUNT = %d", Count);
+    $display("Count = %d", Count);
+    #1;
   end
+  $display("COUNT = %d", Count);
+
 end
 
 

@@ -32,7 +32,7 @@ end
 initial
 begin
         reset = 1'b1;
-  #16   reset = 1'b0;
+  #160  reset = 1'b0;
   #280  reset = 1'b1;
   #4    reset = 1'b0;
   #2000 $stop; //terminate the simulation

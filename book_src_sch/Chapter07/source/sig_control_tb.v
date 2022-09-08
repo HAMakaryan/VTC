@@ -9,6 +9,7 @@ reg x;
 wire  [1:0] hwy;
 wire  [1:0] cntry;
 
+
 sig_control  DUT(
   .hwy    (hwy),
   .cntry  (cntry),
@@ -37,14 +38,19 @@ end
 always
 begin
   x = 1'b0;
-  #500;
+  #50000000;
   x = 1'b1;
-  #150;
+  #100000000;
+  x = 1'b0;
+  #50000000;
+  x = 1'b1;
+  #1500000;
+  x = 1'b0;
 end
 
 initial
 begin
-  #5000 $stop;
+//  #50000 $stop;
 end
 
 

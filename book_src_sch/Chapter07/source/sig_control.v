@@ -1,118 +1,125 @@
 `define   TRUE      1'b1
 `define   FALSE     1'b0
 //Delays
-`define   Y2RDELAY  3 //Yellow to red delay
-`define   R2GDELAY  2 //Red to green delay
+`define   Y2RDELAY  3_000_000_00 //Yellow to red delay
+`define   R2GDELAY  2_000_000_00 //Red to green delay
 
 module sig_control (
-  hwy,
-  cntry,
-  X,
-  clock,
-  clear
+  output [1:0]  hwy,
+  output [1:0]  cntry,
+  input         X,
+  input         clock,
+  input         clear
 );
 
-//I/O ports
-output [1:0] hwy, cntry;
-//2-bit output for 3 states of signal
-//GREEN, YELLOW, RED;
-reg [1:0] hwy, cntry;
-//declared output signals are registers
+parameter [2:0] s0    = 3'b000;
+parameter [2:0] s1    = 3'b001;
+parameter [2:0] s2    = 3'b010;
+parameter [2:0] s3    = 3'b011;
+parameter [2:0] s4    = 3'b100;
+parameter [2:0] s1prs = 3'b101;
+parameter [2:0] s2prs = 3'b110;
+parameter [2:0] s4prs = 3'b111;
 
-input X;
-//if TRUE, indicates that there is car on
-//the country road, otherwise FALSE
+reg [ 2:0]    state_next;
+reg [ 2:0]    state_current;
+reg [33:0]    counter;
+wire          time_over;
 
-input clock, clear;
+assign cntry = 2'b00;
+assign hwy   = 2'b01;
 
-parameter RED     = 2'd0,
-          YELLOW  = 2'd1,
-          GREEN   = 2'd2;
-
-//State definition     HWY      CNTRY
-localparam  S0 = 3'd0, //GREEN    RED
-            S1 = 3'd1, //YELLOW   RED
-            S2 = 3'd2, //RED      RED
-            S3 = 3'd3, //RED      GREEN
-            S4 = 3'd4; //RED      YELLOW
-
-//Internal state variables
-reg [2:0] state;
-reg [2:0] next_state;
-
-//state changes only at positive edge of clock
-always @(posedge clock)
+always@(posedge clock)
 begin
-  if (clear) begin
-    state <= S0; //Controller starts in S0 state
-  end else begin
-    state <= next_state; //State change
+  if(clear == 1'b1)
+  begin
+    state_current <= s0;
+  end else
+  begin
+    state_current <= state_next;
   end
 end
 
-//Compute values of main signal and country signal
-always @(state)
+always@(*)
 begin
-  hwy   = GREEN;  //Default Light Assignment for Highway light
-  cntry = RED;    //Default Light Assignment for Country light
-  case(state)
-    S0: ; // No change, use default
-    S1: hwy = YELLOW;
-    S2: hwy = RED;
-    S3:
+  state_next = state_current;
+  case(state_current)
+    s0  :
       begin
-        hwy = RED;
-        cntry = GREEN;
+        if(X == 1'b1)
+        begin
+          state_next = s1prs;
+        end
       end
-    S4:
+    s1prs  :
       begin
-        hwy = RED;
-        cntry = YELLOW;
+        state_next = s1;
       end
-    default:
+    s1  :
       begin
-        hwy   = GREEN;  //Default Light Assignment for Highway light
-        cntry = RED;    //Default Light Assignment for Country light
+        if(time_over == 1'b1)
+        begin
+          state_next = s2prs;
+        end
+      end
+    s2prs  :
+      begin
+        state_next = s2;
+      end
+    s2  :
+      begin
+        if(time_over == 1'b1)
+        begin
+          state_next = s3;
+        end
+      end
+    s3  :
+      begin
+        if(X == 1'b0)
+        begin
+          state_next = s4prs;
+        end
+      end
+    s4prs  :
+      begin
+        state_next = s4;
+      end
+    s4  :
+      begin
+        if(time_over == 1'b1)
+        begin
+          state_next = s0;
+        end
+      end
+    default  :
+      begin
+        state_next = s0;
       end
   endcase
 end
 
-//State machine using case statements
-always @(state or X)
+
+always@(posedge clock)
 begin
-  next_state = state;
-  case (state)
-    S0:
-      if(X)
-        next_state = S1;
-      else
-        next_state = S0;
-    S1:
-      begin //delay some positive edges of clock
-        repeat(`Y2RDELAY)
-        begin
-          @(posedge clock) ;
-        end
-        next_state = S2;
-      end
-    S2:
-      begin //delay some positive edges of clock
-        repeat(`R2GDELAY) @(posedge clock);
-        next_state = S3;
-      end
-    S3:
-      if(X)
-        next_state = S3;
-      else
-        next_state = S4;
-    S4:
-      begin //delay some positive edges of clock
-        repeat(`Y2RDELAY) @(posedge clock) ;
-        next_state = S0;
-      end
-    default:
-      next_state = S0;
-  endcase
+  if(clear == 1'b1)
+  begin
+    counter <= 34'h0;
+  end else if (state_current == s1prs || state_current == s4prs)
+  begin
+    counter <= `Y2RDELAY;
+  end else if (state_current == s2prs)
+  begin
+    counter <= `R2GDELAY;
+  end else if (state_current == s1 ||
+               state_current == s2 ||
+               state_current == s4)
+  begin
+    counter <= counter - 34'h1;
+  end
 end
+
+assign time_over = (counter == 34'h1 ) ? 1'b1 : 1'b0;
 
 endmodule
+
+

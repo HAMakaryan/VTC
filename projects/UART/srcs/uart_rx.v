@@ -73,14 +73,15 @@ begin
     start:
     if (s_tick == 1'b1)
       begin if (s_reg == 5'd7)  // center of the start
-      begin
-        state_next = data;
-        s_next = 5'b0;
-        n_next = 3'b0;
-      end else begin
-        s_next = s_reg + 1;
+        begin
+          state_next = data;
+          s_next = 5'b0;
+          n_next = 3'b0;
+        end else
+        begin
+          s_next = s_reg + 1;
+        end
       end
-    end
     data:
       if (s_tick == 1'b1)
       begin
@@ -92,17 +93,14 @@ begin
           begin
               state_next = stop;
           end
-          else
-          begin
+          else begin
             n_next = n_reg + 1;
           end
-        end
-        else
+        end else
         begin
           s_next = s_reg + 1;
         end
       end
-
     stop:
       if (s_tick == 1'b1)
       begin
@@ -111,8 +109,7 @@ begin
           state_next    = idle;
           rx_done_tick  = 1;
         end
-        else
-        begin
+        else begin
           s_next = s_reg + 1;
         end
       end
@@ -120,7 +117,6 @@ begin
 end
 
 assign dout = b_reg;
-
 
    //Function to calculate log2 of depth
  function  integer clogb2 (input integer depth);

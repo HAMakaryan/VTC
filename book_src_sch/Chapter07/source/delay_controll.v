@@ -1,3 +1,15 @@
+/*
+  +maxdelays
+  Use maximum timing from min:typ:max expressions
+
+  +mindelays
+  Use minimum timing from min:typ:max expressions
+
+  +typdelays
+  Use typical timing from min:typ:max expressions (Default)
+*/
+
+
 `timescale 1ns/1ps
 
 `define INTRA_ASSIGNMENT_DELAY // REGULAR_DELAY INTRA_ASSIGNMENT_DELAY
@@ -29,6 +41,28 @@ parameter latency = 20;
 parameter delta   =  2;
 //define register variables
 reg a, x, y, z, p, q, m, temp_pq;
+reg A,B,C;
+wire E, O;
+
+// Internal nets
+// Instantiate primitive gates to build the circuit
+and #(5) a1(E, A, B); //Delay of 5 on gate a1
+ or #(4) o1(O, E, C); //Delay of 4 on gate o1
+
+initial
+begin
+  A = 0;
+  B = 0;
+  C = 0;
+  #20;
+  A = 1;
+  B = 1;
+  C = 1;
+  #20;
+  A = 0;
+  B = 0;
+  C = 0;
+end
 
 `ifdef REGULAR_DELAY
 initial
@@ -40,7 +74,8 @@ begin
   #latency z = 0;           // Delay control with identifier. Delay of 20 units
   #(latency + delta) p = 1; // Delay control with expression
   #y x = x + 1;             // Delay control with identifier. Take value of y.
-  #(4:5:6) q = 0;           // Minimum, typical and maximum delay values.
+  q = 1;
+  #(4:5:8) q = 0;           // Minimum, typical and maximum delay values.
                             // Discussed in gate-level modeling chapter.
 end
 
@@ -49,7 +84,7 @@ end
 initial
 begin
   #0;
-  y <= #5 x + z; //Take value of x and z at the time=0, evaluate
+  y = #5 x + z; //Take value of x and z at the time=0, evaluate
                 //x + z and then wait 5 time units to assign value to y.
   #2.5;
   a = 1;
@@ -74,6 +109,12 @@ end
 
 initial
 begin
+  /*
+
+  m = #5 p + q;
+
+  */
+
   p = 0;
   q = 0;
   temp_pq = p + q;//Take value of p + q at the current time and
@@ -87,7 +128,7 @@ end
 
 initial
 begin
-  #30;
+  #350;
   $stop;
 end
 

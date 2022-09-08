@@ -43,9 +43,5 @@ binary_to_BCD dut_2
     .HUNDREDS (HUNDREDS)
 );
 
-
-AA
-0
-
 endmodule
 

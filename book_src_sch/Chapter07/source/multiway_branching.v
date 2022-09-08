@@ -33,7 +33,10 @@ end
 
 endmodule
 
-repeat(128) @(posedge clk)
+repeat(128)
+begin
+  @(posedge clk);
+end
 
 initial
 begin

@@ -8,15 +8,15 @@ module uart
   /* System Interface */
   input           clk_in,
   input           resetn,
-  input   [10:0]  dvsr,
-  /* Tx Interface */
-  input           wr_uart,
-  input   [ 7:0]  w_data,
-  output          tx_full,
-  /* Rx Interface */
-  input           rd_uart,
-  output  [ 7:0]  r_data,
-  output          rx_empty,
+//  input   [10:0]  dvsr,
+//  /* Tx Interface */
+//  input           wr_uart,
+//  input   [ 7:0]  w_data,
+//  output          tx_full,
+//  /* Rx Interface */
+//  input           rd_uart,
+//  output  [ 7:0]  r_data,
+//  output          rx_empty,
   /* UART Interface */
   input           rx,
   output          tx
@@ -32,6 +32,8 @@ wire            tx_done_tick;
 wire            reset;
 wire            sys_clk;
 wire            wr_rd_uart;
+
+wire [23:0] probe0;
 
 
       //HAM Debug//
@@ -85,7 +87,7 @@ fifo #(
 ) fifo_rx_unit (
   .clk          (sys_clk),
   .reset        (reset),
-  .rd           (rd_uart),
+  .rd           (wr_rd_uart),
   .wr           (rx_done_tick),
   .w_data       (rx_data_out),
   .empty        (rx_empty),
@@ -123,5 +125,15 @@ clk_wiz_0 Digital_Clock_Manager
 
 assign tx_fifo_not_empty = !tx_empty;
 assign reset             = !locked;
+//assign probe0            = {rd_uart};
+//
+//
+//ila_0 your_instance_name (
+//  .clk(sys_clk),        // input wire clk
+//  .probe0(probe0)       // input wire [23:0] probe0
+//);
+
+
+
 
 endmodule

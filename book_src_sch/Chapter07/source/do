@@ -4,18 +4,22 @@
 
 # vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/ripple_adder.v
 # vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/ripple_adder_top.v
-vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/sig_control.v
-vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/sig_control_tb.v
+# vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/sig_control.v
+# vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/sig_control_tb.v
 # vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/stimulus_07_01.v
 # vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/07_02_Procedural_Assignments.v
-# vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/conditional_statements.v
+vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/conditional_statements.v
 # vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/event_based_timing_control.v
 # vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/loops.v
 # vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/multiway_branching.v
-# vlog  -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/delay_controll.v
+# vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/delay_controll.v
 
 # vsim +maxdelays -voptargs=+acc work.delay_control
+# vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/DFF.v
+# vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter07/source/DFF_tb.v
 
 restart -f
-run 5 s
+run 340ns
+
+
 

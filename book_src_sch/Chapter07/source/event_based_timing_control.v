@@ -6,7 +6,7 @@
                                   // EVENT_OR_CONTROL
                                   // LEVELSENSITIVE_CONTROL
 
-module event_based_timing_control;
+module   event_based_timing_control;
 
 reg clock = 0;
 reg q, d, Q, Y;
@@ -17,6 +17,7 @@ reg [3:0] data_buf = 4'b0000;
 reg reset;
 reg rstn;
 integer count = 0;
+event received_data; //Define an event called received_data
 
 
 always
@@ -69,12 +70,11 @@ begin
 end
 
 
-event received_data; //Define an event called received_data
 
 always @(posedge clock) //check at each positive clock edge
 begin
-  if(last_data_packet)  //If this is the last data packet
-  #3 ->received_data;      //trigger the event received_data
+  if(last_data_packet == 1'b1)  //If this is the last data packet
+  #3 -> received_data;      //trigger the event received_data
 end
 //data_pkt = 4'bXZ10;
 always @(received_data)     //Await triggering of event received_data
@@ -150,8 +150,8 @@ begin
   end
 //A level-sensitive latch with asynchronous reset
 
-//always @( reset, clock, d) //Wait for reset or clock or d to change
-always @( reset or clock or d) //Wait for reset or clock or d to change
+always @( reset, clock, d) //Wait for reset or clock or d to change
+//always @( reset or clock or d) //Wait for reset or clock or d to change
 begin
   if (reset) //if reset signal is high, set q to 0.
   begin
@@ -165,9 +165,9 @@ end
 
 //A positive edge triggered D flipflop with asynchronous falling
 //reset can be modeled as shown below
-always @(posedge clock, negedge rstn) //Note use of comma operator
+always @(posedge clock)// , negedge rstn) //Note use of comma operator
 begin
-  if(!rstn) begin
+  if(rstn == 1'b0) begin
     Q <=0;
   end else begin
     Q <=d;
@@ -217,7 +217,7 @@ always
 begin
   wait (count_enable)
   begin
-    #20 count = count + 1; // 75ns
+    #19 count = count + 1; // 75ns
     @(posedge clock);
     @(posedge clock);
     @(posedge clock);

@@ -4,7 +4,7 @@
 
   /*
     3.1.1 Whitespace
-    Blank spaces (\b) " "
+    Blank spaces ( )  " "
     Tabs         (\t) "							  "
     Newlines     (\n) "
 "
@@ -191,10 +191,10 @@ considered to be part of the identifier. Therefore, an escaped identifier
     end
 
   //  3.2.6 Arrays
-  integer count [0 :  7]; // An array of 8 count variables
-  reg     bool  [31:  0]; // Array of 32 one-bit boolean register variables
-  reg     LUT2  [0:3];
-  reg     LUT3  [0:7];
+  integer count [ 0: 7]; // An array of 8 count variables
+  reg     bool  [31: 0]; // Array of 32 one-bit boolean register variables
+  reg     LUT2  [ 0: 3];
+  reg     LUT3  [ 0: 7];
   time chk_point[ 1:100]; // Array of 100 time checkpoint variables
   reg [4:0] port_id[0:7]; // Array of 8 port_ids; each port_id is 5 bits wide
   integer matrix[4:0][0:255]; // Two dimensional array of integers
@@ -358,4 +358,7 @@ This facility is provided by the $monitor task.
 
 
 Two other directives, `ifdef and `timescale, are used frequently.
+
+
+{busA[7], busA[4], busA[1]}
 

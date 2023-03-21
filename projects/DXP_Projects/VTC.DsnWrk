@@ -4,3 +4,7 @@ Version=1.0
 ProjectPath=UART2LCD\u2c\u2c.PrjPcb
 [Project2]
 ProjectPath=LCD_BS\LCD_BS.PrjPcb
+[Project3]
+ProjectPath=..\..\..\..\td\PIC\PIC14FxxK50\Sensor_board\SensorController_USB.PrjPCB
+[Project4]
+ProjectPath=..\RHH22\lcd_ctrl_block_diagram\lcd_ctrl_block_diagram\lcd_ctrl_block_diagram.PrjPcb

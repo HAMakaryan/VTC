@@ -4,7 +4,10 @@ reg [1:0] alu_control;
 ...
 ...
 case (alu_control)
-  2'd0 : y = x + z;
+  2'd0 :
+    begin
+      y = x + z;
+    end
   2'd1 : y = x - z;
   2'd2 : y = x * z;
   default : $display("Invalid ALU control signal");

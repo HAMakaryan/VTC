@@ -1,0 +1,92 @@
+// Module name and port list
+// Stimulus module
+//cd  D:/GitHub/VTC/book_src_sch/Chapter04/source/
+
+`timescale 1ns/10ps
+
+module SR_latch_tb;
+// Declarations of wire, reg, and other variables
+wire  q;
+wire  qbar;
+wire  q1;
+wire  q2;
+wire  qbar1;
+reg   set_n;
+reg   reset_n;
+
+// Instantiate lower-level modules
+// In this case, instantiate SR_latch
+// Feed inverted set and reset signals to the SR latch
+SR_latch DUT(
+  .Q   (q),
+  .Sbar(set_n),
+  .Qbar(qbar),
+  .Rbar(reset_n)
+);
+
+SR_latch m2(q1, qbar1, set_n, reset_n);
+
+// Behavioral block, initial
+initial
+begin
+  $monitor($time, " 'M' set_n = %b, reset_n= %b, q= %b ",set_n,reset_n,q);
+  set_n       = 0;
+  reset_n     = 1;
+  #5 ;
+  set_n       = 1;
+  reset_n     = 1;
+ // $display($time, "D set_n = %b, reset_n= %b, q= %b ",set_n,reset_n,q);
+  #5 ;
+
+  set_n       = 1;
+  reset_n     = 0;
+  #5 ;
+  set_n       = 1;
+  reset_n     = 1;
+  #5 ;
+
+  set_n       = 0;
+  reset_n     = 0;
+  #5 ;
+  reset_n     = 1;
+  set_n       = 1;
+  #5 ;
+
+
+  set_n       = 0;
+  reset_n     = 0;
+  #5 ;
+  set_n       = 1;
+  reset_n     = 1;
+  #5 ;
+
+//  $monitoroff;
+
+  set_n       = 0;
+  reset_n     = 0;
+  #5 ;
+  set_n       = 1;
+  reset_n     = 1;
+  #5 ;
+
+//  $display($time, " 'display' set_n = %b, reset_n= %b, q= %b ",set_n,reset_n,q);
+  reset_n     = 0;
+  set_n       = 0;
+  #5 ;
+  set_n       = 1;
+  reset_n     = 1;
+  #5 ;
+
+//  $monitoron;
+  set_n       = 0;
+  reset_n     = 0;
+  #5 ;
+  set_n       = 1;
+  reset_n     = 1;
+  #5 ;
+  #5 ;
+  $stop;
+end
+
+// endmodule statement
+endmodule

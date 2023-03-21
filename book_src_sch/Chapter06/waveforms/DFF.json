@@ -1,0 +1,10 @@
+{ signal:
+  [
+    {name: 'Clear', wave: '1..0.................',period: 1, node: '.'  },
+    {name: 'clk  ', wave: 'N....................',period: 1, node: '.'  },
+    {name: 'D    ', wave: '0....1..0......1.....',period: 1, node: '.',phase : 0.5 },
+    {name: 'Q    ', wave: '0....1..0......1.....',period: 1, node: '.'  },
+    {name: 'Qbar ', wave: '1....0..1......0.....',period: 1, node: '.'  },
+  ],
+}
+

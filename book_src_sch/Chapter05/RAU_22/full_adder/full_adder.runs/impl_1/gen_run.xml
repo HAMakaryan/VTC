@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1666071336">
+  <File Type="ROUTE-PWR" Name="full_adder_4bit_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="full_adder_4bit.tcl"/>
+  <File Type="BITSTR-BMM" Name="full_adder_4bit_bd.bmm"/>
+  <File Type="ROUTE-PWR-SUM" Name="full_adder_4bit_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="full_adder_4bit_reports.tcl"/>
+  <File Type="OPT-DCP" Name="full_adder_4bit_opt.dcp"/>
+  <File Type="OPT-DRC" Name="full_adder_4bit_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="full_adder_4bit.hwdef"/>
+  <File Type="PWROPT-DCP" Name="full_adder_4bit_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="full_adder_4bit_placed.dcp"/>
+  <File Type="PLACE-IO" Name="full_adder_4bit_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="full_adder_4bit_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="full_adder_4bit_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="full_adder_4bit_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="full_adder_4bit_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="full_adder_4bit.bgn"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="full_adder_4bit_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="full_adder_4bit.bin"/>
+  <File Type="PHYSOPT-DCP" Name="full_adder_4bit_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="full_adder_4bit.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="full_adder_4bit_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="full_adder_4bit_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="full_adder_4bit_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="full_adder_4bit_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="full_adder_4bit_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="full_adder_4bit_drc_routed.rpx"/>
+  <File Type="BITSTR-LTX" Name="full_adder_4bit.ltx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="full_adder_4bit_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="full_adder_4bit.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="full_adder_4bit_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="full_adder_4bit_methodology_drc_routed.pb"/>
+  <File Type="BITSTR-SYSDEF" Name="full_adder_4bit.sysdef"/>
+  <File Type="ROUTE-PWR-RPX" Name="full_adder_4bit_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="full_adder_4bit_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="full_adder_4bit_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="full_adder_4bit_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="full_adder_4bit_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="full_adder_4bit_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-CLK" Name="full_adder_4bit_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="full_adder_4bit_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="full_adder_4bit_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="full_adder_4bit_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="full_adder_4bit_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="full_adder_4bit_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="full_adder_4bit.bit"/>
+  <File Type="BITSTR-RBT" Name="full_adder_4bit.rbt"/>
+  <File Type="BITSTR-NKY" Name="full_adder_4bit.nky"/>
+  <File Type="BG-DRC" Name="full_adder_4bit.drc"/>
+  <File Type="RDI-RDI" Name="full_adder_4bit.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../full_adder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../full_adder_4bit.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="full_adder_4bit"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/digilent-xdc/Arty-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Digilent/digilent-xdc/Arty-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1633802106"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

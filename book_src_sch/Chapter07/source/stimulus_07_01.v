@@ -13,9 +13,7 @@ reg m;
 reg clock;
 
 initial
-begin
   m = 1'b0;       //single statement; does not need to be grouped
-end
 
 initial
 begin
@@ -31,7 +29,7 @@ end
 
 initial
 begin
-  #500 $stop;
+  #50 $stop;
 //  #50 $finish;
 end
 

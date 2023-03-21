@@ -5,11 +5,11 @@
 `define   R2GDELAY  2_000_000_00 //Red to green delay
 
 module sig_control (
-  output [1:0]  hwy,
-  output [1:0]  cntry,
-  input         X,
-  input         clock,
-  input         clear
+  output      [2:0]  rgb_hwy,
+  output      [2:0]  rgb_cntry,
+  input              X,
+  input              clock,
+  input              rst_n
 );
 
 parameter [2:0] s0    = 3'b000;
@@ -17,21 +17,31 @@ parameter [2:0] s1    = 3'b001;
 parameter [2:0] s2    = 3'b010;
 parameter [2:0] s3    = 3'b011;
 parameter [2:0] s4    = 3'b100;
-parameter [2:0] s1prs = 3'b101;
-parameter [2:0] s2prs = 3'b110;
-parameter [2:0] s4prs = 3'b111;
+
+parameter [1:0] GREEN  = 2'b00;
+parameter [1:0] RED    = 2'b01;
+parameter [1:0] YELLOW = 2'b11;
 
 reg [ 2:0]    state_next;
 reg [ 2:0]    state_current;
-reg [33:0]    counter;
-wire          time_over;
+reg [28:0]    counter;
+reg [ 1:0]     hwy;
+reg [ 1:0]     cntry;
 
-assign cntry = 2'b00;
-assign hwy   = 2'b01;
+
+assign rgb_hwy =    (GREEN  == hwy)? 3'b010 :
+                    (RED    == hwy)? 3'b100 :
+                    (YELLOW == hwy)? 3'b001 :
+                     3'b000;
+
+assign rgb_cntry =  (GREEN  == cntry)? 3'b010 :
+                    (RED    == cntry)? 3'b100 :
+                    (YELLOW == cntry)? 3'b001 :
+                     3'b000;
 
 always@(posedge clock)
 begin
-  if(clear == 1'b1)
+  if(rst_n == 1'b0)
   begin
     state_current <= s0;
   end else
@@ -46,49 +56,37 @@ begin
   case(state_current)
     s0  :
       begin
-        if(X == 1'b1)
+        if (X == 1'b1)
         begin
-          state_next = s1prs;
+          state_next = s1;
         end
-      end
-    s1prs  :
-      begin
-        state_next = s1;
       end
     s1  :
       begin
-        if(time_over == 1'b1)
+        if (counter == 0)
         begin
-          state_next = s2prs;
+          state_next = s2;
         end
-      end
-    s2prs  :
-      begin
-        state_next = s2;
       end
     s2  :
       begin
-        if(time_over == 1'b1)
+        if (counter == 0)
         begin
           state_next = s3;
         end
       end
     s3  :
       begin
-        if(X == 1'b0)
+        if (X == 0)
         begin
-          state_next = s4prs;
+          state_next = s4 ;
         end
-      end
-    s4prs  :
-      begin
-        state_next = s4;
       end
     s4  :
       begin
-        if(time_over == 1'b1)
+        if (counter == 0)
         begin
-          state_next = s0;
+          state_next = s0 ;
         end
       end
     default  :
@@ -101,24 +99,68 @@ end
 
 always@(posedge clock)
 begin
-  if(clear == 1'b1)
+  if(rst_n == 1'b0)
   begin
-    counter <= 34'h0;
-  end else if (state_current == s1prs || state_current == s4prs)
+    counter <= 29'h0;
+  end else if ((state_current == s0 && state_next == s1) ||
+               (state_current == s3 && state_next == s4))
   begin
     counter <= `Y2RDELAY;
-  end else if (state_current == s2prs)
+  end else if (state_current == s1 && state_next == s2)
   begin
     counter <= `R2GDELAY;
   end else if (state_current == s1 ||
                state_current == s2 ||
                state_current == s4)
   begin
-    counter <= counter - 34'h1;
+    counter <= counter - 29'h1;
   end
 end
 
-assign time_over = (counter == 34'h1 ) ? 1'b1 : 1'b0;
+always@(posedge clock)
+begin
+  if(rst_n == 1'b0)
+  begin
+    cntry <= 2'b10;
+    hwy   <= 2'b10;
+  end else
+  begin
+    case(state_current)
+    s0  :
+      begin
+        hwy   <= GREEN;
+        cntry <= RED;
+      end
+    s1  :
+      begin
+        hwy   <= YELLOW;
+        cntry <= RED;
+      end
+    s2  :
+      begin
+        hwy   <= RED;
+        cntry <= RED;
+      end
+    s3  :
+      begin
+        hwy   <= RED;
+        cntry <= GREEN;
+      end
+    s4  :
+      begin
+        hwy   <= RED;
+        cntry <= YELLOW;
+      end
+    default  :
+      begin
+        cntry <= 2'b10;
+        hwy   <= 2'b10;
+      end
+  endcase
+
+  end
+end
+
 
 endmodule
 

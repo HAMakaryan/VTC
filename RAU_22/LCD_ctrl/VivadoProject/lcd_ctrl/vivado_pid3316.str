@@ -1,0 +1,152 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 3316
+License: Customer
+
+Current time: 	Tue Feb 28 09:17:21 AMT 2023
+Time zone: 	Armenia Standard Time (Asia/Yerevan)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 34 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	D:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	D:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	hrach
+User home directory: C:/Users/hrach
+User working directory: D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2019.1
+RDI_DATADIR: D:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: D:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/hrach/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/hrach/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/hrach/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	D:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/vivado.log
+Vivado journal file location: 	D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/vivado.jou
+Engine tmp dir: 	D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/.Xil/Vivado-3316-DESKTOP-FSNETFU
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: D:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Xilinx/Vivado/2019.1
+XILINX_SDK: D:/Xilinx/SDK/2019.1
+XILINX_VIVADO: D:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: D:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 628 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 107 MB (+109582kb) [00:00:11]
+// [Engine Memory]: 576 MB (+452905kb) [00:00:11]
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: D:\GitHub\VTC\RAU_22\LCD_ctrl\VivadoProject\lcd_ctrl\lcd_ctrl.xpr. Version: Vivado v2019.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/lcd_ctrl.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 661 MB. GUI used memory: 48 MB. Current time: 2/28/23, 9:17:23 AM AMT
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/lcd_ctrl.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 734 MB (+134782kb) [00:00:20]
+// WARNING: HEventQueue.dispatchEvent() is taking  3816 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.1/data/ip'. 
+// Project name: lcd_ctrl; location: D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl; part: xc7a35ticsg324-1L
+// [GUI Memory]: 114 MB (+1391kb) [00:00:24]
+// Tcl Message: open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 764.930 ; gain = 155.102 
+dismissDialog("Open Project"); // by (cl)
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 766 MB. GUI used memory: 52 MB. Current time: 2/28/23, 9:17:38 AM AMT
+// PAPropertyPanels.initPanels (lcd_drv.v) elapsed time: 0.3s
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lcd_drv (lcd_drv.v)]", 1, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lcd_drv (lcd_drv.v)]", 1, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lcd_drv (lcd_drv.v)]", 1, false, false, false, false, false, true); // B (F, cl) - Double Click
+// Launch External Editor: 'UEStudio.exe "D:/GitHub/VTC/RAU_22/LCD_ctrl/RTL/lcd_drv.v" -l4'
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 204ms to process. Increasing delay to 2000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 766 MB. GUI used memory: 55 MB. Current time: 2/28/23, 9:47:38 AM AMT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 774 MB (+3479kb) [00:34:31]
+// Elapsed time: 2068 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+// WARNING: HEventQueue.dispatchEvent() is taking  1342 ms.
+// by (SwingUtilities.SharedOwnerFrame):  Open IP Catalog : addNotify
+dismissDialog("Open IP Catalog"); // by (SwingUtilities.SharedOwnerFrame)
+// Elapsed time: 11 seconds
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "rom"); // OverlayTextField (aF, cl)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Distributed Memory Generator ;  ; Production ; Included ; xilinx.com:ip:dist_mem_gen:8.0", 8, "Distributed Memory Generator", 0, false); // L (O, cl)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Distributed Memory Generator ;  ; Production ; Included ; xilinx.com:ip:dist_mem_gen:8.0", 8, "Distributed Memory Generator", 0, false); // L (O, cl)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Distributed Memory Generator ;  ; Production ; Included ; xilinx.com:ip:dist_mem_gen:8.0", 8); // L (O, cl)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Distributed Memory Generator ;  ; Production ; Included ; xilinx.com:ip:dist_mem_gen:8.0", 8, "Distributed Memory Generator", 0, false, false, false, false, false, true); // L (O, cl) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// TclEventType: LOAD_FEATURE
+// l (cl):  Customize IP : addNotify
+// r (cl): Customize IP: addNotify
+dismissDialog("Customize IP"); // l (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 801 MB. GUI used memory: 59 MB. Current time: 2/28/23, 9:52:43 AM AMT
+// Elapsed time: 18 seconds
+setText("Data Width", "12"); // z (cU, r)
+// Elapsed time: 92 seconds
+setText("Depth", "16"); // z (cU, r)
+selectRadioButton((HResource) null, "ROM"); // cO
+// Elapsed time: 22 seconds
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Port config", 1); // cT (E, r)
+// Elapsed time: 12 seconds
+selectRadioButton((HResource) null, "Registered"); // cO
+selectRadioButton((HResource) null, "Non Registered"); // cO
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "RST & Initialization", 2); // cT (E, r)
+// Elapsed time: 229 seconds
+selectButton(PAResourceTtoZ.XPG_CoeFileWidgdet_EDIT, (String) null); // a (E, r)
+// Elapsed time: 15 seconds
+selectButton("OptionPane.button", "Yes"); // JButton (A, H)

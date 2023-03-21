@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Feb 28 09:16:53 2023
+# Process ID: 3316
+# Current directory: D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13544 D:\GitHub\VTC\RAU_22\LCD_ctrl\VivadoProject\lcd_ctrl\lcd_ctrl.xpr
+# Log file: D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/vivado.log
+# Journal file: D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/lcd_ctrl.xpr
+WARNING: [Board 49-91] Board repository path 'C:/Users/hrach/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' does not exist, it will not be used to search board files.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/hrach/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 764.930 ; gain = 155.102
+update_compile_order -fileset sources_1

@@ -1,0 +1,16 @@
+{ signal:
+  [
+    {name: 'RS'  , wave: 'x...4.....x.|4.....x..',period: 1, data: ["Addr1", "Addr2", "b", "c"], 
+                    node:'....a........b........'  },
+    {name: 'R/Wn', wave: 'x...0.......|.........',period: 1, node: '.'},
+    {name: 'E   ', wave: '0.....1..0..|..1..0...',period: 1, 
+                   node: '......c'},
+    {name: 'Data', wave: 'x.......5.x.|....5.x..',period: 1, node: '.', data: ["Data1", "Data2", "Data3", "Data4"]},
+    {name: 'Data', wave: 'x...6.....x.|6.....x..',period: 1, node: '.', data: ["Data1", "Data2", "Data3", "Data4"]},
+  ],
+    edge: [
+    'a-|c t1'
+  ]
+
+}
+

@@ -1,0 +1,11 @@
+# cd D:/GitHub/VTC/book_src_sch/Chapter04/source/
+vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter04/source/SR_latch.v
+vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter04/source/SR_latch_tb.v
+
+
+#vsim -novopt work.Top
+
+restart -f
+run
+
+

@@ -1,0 +1,126 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Mar 16 08:31:37 2023
+# Process ID: 1440
+# Current directory: D:/GitHub/VTC/projects/RHH22/lcd_ctrl
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7688 D:\GitHub\VTC\projects\RHH22\lcd_ctrl\lcd_ctrl.xpr
+# Log file: D:/GitHub/VTC/projects/RHH22/lcd_ctrl/vivado.log
+# Journal file: D:/GitHub/VTC/projects/RHH22/lcd_ctrl\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.xpr
+WARNING: [Board 49-91] Board repository path 'C:/Users/hrach/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' does not exist, it will not be used to search board files.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 781.309 ; gain = 170.422
+update_compile_order -fileset sources_1
+create_ip -name dist_mem_gen -vendor xilinx.com -library ip -version 8.0 -module_name dist_mem_gen_0 -dir d:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.srcs/sources_1/ip
+set_property -dict [list CONFIG.depth {16} CONFIG.data_width {11} CONFIG.memory_type {rom} CONFIG.input_options {non_registered} CONFIG.coefficient_file {D:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.srcs/sources_1/new/init_data.coe}] [get_ips dist_mem_gen_0]
+INFO: [IP_Flow 19-3484] Absolute path of file 'd:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.srcs/sources_1/new/init_data.coe' provided. It will be converted relative to IP Instance files '../../new/init_data.coe'
+generate_target {instantiation_template} [get_files d:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'dist_mem_gen_0'...
+generate_target all [get_files  d:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'dist_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'dist_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'dist_mem_gen_0'...
+catch { config_ip_cache -export [get_ips -all dist_mem_gen_0] }
+export_ip_user_files -of_objects [get_files d:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci]
+launch_runs -jobs 4 dist_mem_gen_0_synth_1
+[Thu Mar 16 10:56:42 2023] Launched dist_mem_gen_0_synth_1...
+Run output will be captured here: D:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.runs/dist_mem_gen_0_synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:25 ; elapsed = 00:00:21 . Memory (MB): peak = 865.277 ; gain = 10.477
+export_simulation -of_objects [get_files d:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci] -directory D:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.ip_user_files/sim_scripts -ip_user_files_dir D:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.ip_user_files -ipstatic_source_dir D:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.cache/compile_simlib/modelsim} {questa=D:/Xilinx_CompLib_19_1} {riviera=D:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.cache/compile_simlib/riviera} {activehdl=D:/GitHub/VTC/projects/RHH22/lcd_ctrl/lcd_ctrl.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+close_project
+create_project VGA_VHDL D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL -part xc7a35tcpg236-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.1/data/ip'.
+set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
+set_property target_language VHDL [current_project]
+add_files -norecurse D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/hw/hw.srcs/sources_1/imports/hdl/top.vhd
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+import_files -fileset constrs_1 -force -norecurse D:/GitHub/Digilent/digilent-xdc/Basys-3-Master.xdc
+set_property compxlib.questa_compiled_library_dir D:/Xilinx_CompLib_19_1 [current_project]
+update_compile_order -fileset sources_1
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_wiz_0 -dir d:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.srcs/sources_1/ip
+set_property -dict [list CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {148.500} CONFIG.USE_LOCKED {false} CONFIG.USE_RESET {false} CONFIG.MMCM_DIVCLK_DIVIDE {4} CONFIG.MMCM_CLKFBOUT_MULT_F {37.125} CONFIG.MMCM_CLKOUT0_DIVIDE_F {6.250} CONFIG.CLKOUT1_JITTER {217.614} CONFIG.CLKOUT1_PHASE_ERROR {245.344}] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files d:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  d:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files d:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+launch_runs -jobs 4 clk_wiz_0_synth_1
+[Thu Mar 16 13:11:37 2023] Launched clk_wiz_0_synth_1...
+Run output will be captured here: D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.runs/clk_wiz_0_synth_1/runme.log
+export_simulation -of_objects [get_files d:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.ip_user_files/sim_scripts -ip_user_files_dir D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.ip_user_files -ipstatic_source_dir D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.cache/compile_simlib/modelsim} {questa=D:/Xilinx_CompLib_19_1} {riviera=D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.cache/compile_simlib/riviera} {activehdl=D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_runs synth_1 -jobs 4
+[Thu Mar 16 13:13:04 2023] Launched clk_wiz_0_synth_1...
+Run output will be captured here: D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.runs/clk_wiz_0_synth_1/runme.log
+[Thu Mar 16 13:13:04 2023] Launched synth_1...
+Run output will be captured here: D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Thu Mar 16 13:14:36 2023] Launched impl_1...
+Run output will be captured here: D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 16 13:16:43 2023] Launched impl_1...
+Run output will be captured here: D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B7AE6BA
+open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2258.434 ; gain = 1105.996
+set_property PROGRAM.FILE {D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B7AE6BA
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost.
+ Targets(s) ", jsn-Basys3-210183B7AE6BA" may be locked by another hw_server.
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost.
+ Targets(s) ", jsn-Basys3-210183B7AE6BA" may be locked by another hw_server.
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B7AE6BA
+set_property PROGRAM.FILE {D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/GitLocal/RadioPhisics/RadioTech/Projects/VGA_Ctrl/Vivado/VGA_VHDL/VGA_VHDL.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 16 13:31:31 2023...

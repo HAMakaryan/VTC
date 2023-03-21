@@ -1,0 +1,25 @@
+Circuit: * D:\GitHub\VTC\book_src_sch\Draft1.asc
+
+Limiting rise time of source v3 to 0.005
+Limiting fall time of source v3 to 0.005
+Limiting rise time of source v2 to 0.0005
+Limiting fall time of source v2 to 0.0005
+Direct Newton iteration for .op point succeeded.
+
+Date: Thu Nov 24 16:45:41 2022
+Total elapsed time: 0.435 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 43232
+traniter = 43222
+tranpoints = 13967
+accept = 10732
+rejected = 3235
+matrix size = 24
+fillins = 4
+solver = Normal
+Matrix Compiler1: 1.60 KB object code size  0.6/0.4/[0.2]
+Matrix Compiler2: 2.04 KB object code size  0.3/0.7/[0.3]
+

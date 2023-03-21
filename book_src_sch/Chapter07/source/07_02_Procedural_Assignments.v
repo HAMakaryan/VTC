@@ -24,6 +24,12 @@ reg   b = 1;
 reg   temp_a;
 reg   temp_b;
 
+reg   rst_n;
+
+reg r1, r2, r3, r4, r5;
+
+
+
 localparam in_1   = 2'b10;
 localparam in_2   = 2'b00;
 localparam in_3   = 2'b11;
@@ -38,8 +44,8 @@ integer     count;
 
 wire a_w, b_w;
 
-assign a_w = x && y;
-assign b_w = x || y;
+//assign a_w = x && y;
+//assign b_w = x || y;
 
 always
 begin
@@ -49,7 +55,7 @@ begin
   #5;
 end
 
-`define NONBLOCKING  //BLOCKING  //NONBLOCKING
+// `define NONBLOCKING  //BLOCKING  //NONBLOCKING
 //
 ///////////////////////////////
 ///*
@@ -99,6 +105,12 @@ end
 initial
 begin
   $display("\n\t\tNonblocking Assignments");
+  r1 <= 1'b0;
+  r2 <= 1'b0;
+  r3 <= 1'b1;
+  r4 <= 1'b0;
+  r5 <= 1'b0;
+
   x             <= 0;             //Scalar assignments
   y             <= 1;
   z             <= 1;
@@ -116,7 +128,7 @@ end
 always @(posedge clock)
 begin
   reg_1 <= reg_1 + 2'b01;
-  reg_3 <= #4 2'bx;
+  reg_3 <= #14 2'bx;
   @(negedge clock) reg_2 <= reg_3;
   temp_a <= #100 reg_1[1];
 
@@ -128,12 +140,24 @@ end
 always @(posedge clock)
 begin
   a <= b;
+  b <= a;
 end
 
 always @(posedge clock)
 begin
-  b <= a;
 end
+
+
+always @(posedge clock)
+begin
+  r5 <= r4;
+  r4 <= r3;
+  r3 <= r2;
+  r2 <= r1;
+  r1 <= r5;
+end
+
+
 
 /*
 
@@ -146,12 +170,73 @@ always @(posedge clock)
 begin
 //Read operation
 //store values of right-hand-side expressions in temporary variables
+
+
   temp_a = a;
+
   temp_b = b;
 //Write operation
 //Assign values of temporary variables to left-hand-side variables
   a = temp_b;
   b = temp_a;
+end
+
+initial
+begin
+  r1 <= 1'b0;
+  r2 <= 1'b0;
+  r3 <= 1'b1;
+  r4 <= 1'b0;
+  r5 <= 1'b0;
+end
+
+
+always
+begin
+  #0.1
+  r5 <= r4;
+  r4 <= r3;
+  r3 <= r2;
+  r2 <= r1;
+  r1 <= r5;
+end
+
+reg q;
+reg d;
+
+initial
+begin
+  d = 1'b1;
+  repeat (5)
+  begin
+    #16;
+    d = !d;
+  end
+end
+
+initial
+begin
+  rst_n = 1'b1;
+  # 12;
+  rst_n = 1'b0;
+  # 21;
+  rst_n = 1'b1;
+  # 12;
+  rst_n = 1'b0;
+  # 21;
+  rst_n = 1'b1;
+end
+
+
+always @(posedge clock)//, negedge rst_n)
+begin
+  if (rst_n == 1'b0)
+  begin
+    q <= 1'b0;
+  end else
+  begin
+    q <= d;
+  end
 end
 
 `endif

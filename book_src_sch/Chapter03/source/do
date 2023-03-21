@@ -1,5 +1,5 @@
-vlog -reportprogress 300 -work work D:/GitHub/ITC/A_Guide_to_Digital_Design_and_Synthesis/Chapter03_Basic_Concepts/source/ch3_test.v
-restart -f
 .main clear
-run -all
+vlog -reportprogress 300 -work work D:/GitHub/VTC/book_src_sch/Chapter03/source/ch3_test.v
+restart -f
+run @99 ns
 

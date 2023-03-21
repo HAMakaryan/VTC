@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Oct 18 09:34:01 2022
+# Process ID: 7128
+# Current directory: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.runs/synth_1
+# Command line: vivado.exe -log full_adder_4bit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source full_adder_4bit.tcl
+# Log file: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.runs/synth_1/full_adder_4bit.vds
+# Journal file: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source full_adder_4bit.tcl -notrace

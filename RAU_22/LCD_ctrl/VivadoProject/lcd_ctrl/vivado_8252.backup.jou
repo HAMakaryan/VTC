@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Mar  7 09:26:15 2023
+# Process ID: 8252
+# Current directory: D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1196 D:\GitHub\VTC\RAU_22\LCD_ctrl\VivadoProject\lcd_ctrl\lcd_ctrl.xpr
+# Log file: D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/vivado.log
+# Journal file: D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/lcd_ctrl.xpr
+update_compile_order -fileset sources_1
+set_property target_simulator Questa [current_project]
+file mkdir D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/lcd_ctrl.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/lcd_ctrl.srcs/sim_1/new/lcd_drv_tb.v w ]
+add_files -fileset sim_1 D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/lcd_ctrl.srcs/sim_1/new/lcd_drv_tb.v
+update_compile_order -fileset sim_1
+set_property used_in_synthesis false [get_files  D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/lcd_ctrl.srcs/sim_1/new/lcd_drv_tb.v]
+set_property used_in_implementation false [get_files  D:/GitHub/VTC/RAU_22/LCD_ctrl/VivadoProject/lcd_ctrl/lcd_ctrl.srcs/sim_1/new/lcd_drv_tb.v]
+update_compile_order -fileset sim_1
+launch_simulation -install_path C:/questasim64_2021.1/win64
+launch_simulation -install_path C:/questasim64_2021.1/win64
+launch_simulation -install_path C:/questasim64_2021.1/win64
+launch_simulation -install_path C:/questasim64_2021.1/win64

@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 20 09:36:07 2022
+# Process ID: 14148
+# Current directory: D:/GitHub/VTC/book_src_sch/Chapter05/HH_3005_22/Fulladder_4bit
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9636 D:\GitHub\VTC\book_src_sch\Chapter05\HH_3005_22\Fulladder_4bit\Fulladder_4bit.xpr
+# Log file: D:/GitHub/VTC/book_src_sch/Chapter05/HH_3005_22/Fulladder_4bit/vivado.log
+# Journal file: D:/GitHub/VTC/book_src_sch/Chapter05/HH_3005_22/Fulladder_4bit\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/GitHub/VTC/book_src_sch/Chapter05/HH_3005_22/Fulladder_4bit/Fulladder_4bit.xpr
+update_compile_order -fileset sources_1
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+set_property compxlib.questa_compiled_library_dir D:/Xilinx_CompLib_19_1 [current_project]
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+set_property target_simulator XSim [current_project]
+launch_simulation -mode post-implementation -type timing
+source four_bit_adder_tb.tcl
+run 100 us
+run 100 us
+run 100 us
+save_wave_config {D:/GitHub/VTC/book_src_sch/Chapter05/HH_3005_22/Fulladder_4bit/four_bit_adder_tb_time_impl.wcfg}
+add_files -fileset sim_1 -norecurse D:/GitHub/VTC/book_src_sch/Chapter05/HH_3005_22/Fulladder_4bit/four_bit_adder_tb_time_impl.wcfg
+set_property xsim.view D:/GitHub/VTC/book_src_sch/Chapter05/HH_3005_22/Fulladder_4bit/four_bit_adder_tb_time_impl.wcfg [get_filesets sim_1]
+close_sim

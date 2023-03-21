@@ -61,15 +61,19 @@ integer Count;
 
 initial
 begin
-  for ( Count=-1; Count > 128; Count = Count - 1)
+  for ( Count=0; Count < 128; Count = Count + 1)
   begin
     $display("Count = %d", Count);
     #1;
   end
   $display("COUNT = %d", Count);
-
+  repeat(12) @(posedge clk);
 end
 
+reg clk = 0;
+initial
+  forever # 5 ckl = ! clk;
+end
 
 endmodule
 

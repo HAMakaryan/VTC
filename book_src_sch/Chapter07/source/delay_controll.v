@@ -102,8 +102,8 @@ begin
   x = 1;
   z = 0;
   #1;
-  x = 1'bZ;
-  z = 1'bZ;
+  x = 1'bz;
+  z = 1'bz;
 end
 
 

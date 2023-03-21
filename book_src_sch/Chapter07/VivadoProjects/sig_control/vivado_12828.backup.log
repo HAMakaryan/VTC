@@ -1,0 +1,173 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Nov 24 13:30:03 2022
+# Process ID: 12828
+# Current directory: D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2260 D:\GitHub\VTC\book_src_sch\Chapter07\VivadoProjects\sig_control\sig_control.xpr
+# Log file: D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/vivado.log
+# Journal file: D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.xpr
+INFO: [Project 1-313] Project file moved from 'D:/GitHub/Four_Quadrant_Detector/CustomBoard/sig_control' since last save.
+WARNING: [Project 1-312] File not found as 'D:/GitHub/VTC/book_src_sch/VTC/book_src_sch/Chapter07/source/sig_control.v'; using path 'D:/GitHub/VTC/book_src_sch/Chapter07/source/sig_control.v' instead.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 831.906 ; gain = 186.172
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a35ticsg324-1L
+Top: sig_control
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1290.754 ; gain = 190.395
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'sig_control' [D:/GitHub/VTC/book_src_sch/Chapter07/source/sig_control.v:7]
+	Parameter s0 bound to: 3'b000 
+	Parameter s1 bound to: 3'b001 
+	Parameter s2 bound to: 3'b010 
+	Parameter s3 bound to: 3'b011 
+	Parameter s4 bound to: 3'b100 
+	Parameter GREEN bound to: 2'b00 
+	Parameter RED bound to: 2'b01 
+	Parameter YELLOW bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'sig_control' (1#1) [D:/GitHub/VTC/book_src_sch/Chapter07/source/sig_control.v:7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1324.223 ; gain = 223.863
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1324.223 ; gain = 223.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1324.223 ; gain = 223.863
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.srcs/constrs_1/imports/source/Arty-Master.xdc]
+Finished Parsing XDC File [D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.srcs/constrs_1/imports/source/Arty-Master.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1415.797 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:28 ; elapsed = 00:00:16 . Memory (MB): peak = 1497.633 ; gain = 397.273
+6 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:00:55 . Memory (MB): peak = 1497.633 ; gain = 637.789
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1533.133 ; gain = 35.500
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'sig_control' [D:/GitHub/VTC/book_src_sch/Chapter07/source/sig_control.v:7]
+	Parameter s0 bound to: 3'b000 
+	Parameter s1 bound to: 3'b001 
+	Parameter s2 bound to: 3'b010 
+	Parameter s3 bound to: 3'b011 
+	Parameter s4 bound to: 3'b100 
+	Parameter GREEN bound to: 2'b00 
+	Parameter RED bound to: 2'b01 
+	Parameter YELLOW bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'sig_control' (1#1) [D:/GitHub/VTC/book_src_sch/Chapter07/source/sig_control.v:7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1535.707 ; gain = 38.074
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1544.547 ; gain = 46.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1544.547 ; gain = 46.914
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.srcs/constrs_1/imports/source/Arty-Master.xdc]
+Finished Parsing XDC File [D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.srcs/constrs_1/imports/source/Arty-Master.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:13 . Memory (MB): peak = 1566.559 ; gain = 68.926
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.srcs/constrs_1/imports/source/Arty-Master.xdc]
+Finished Parsing XDC File [D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.srcs/constrs_1/imports/source/Arty-Master.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 1566.559 ; gain = 0.000
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.srcs/constrs_1/imports/source/Arty-Master.xdc]
+Finished Parsing XDC File [D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.srcs/constrs_1/imports/source/Arty-Master.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1613.062 ; gain = 46.504
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Nov 24 13:46:44 2022] Launched synth_1...
+Run output will be captured here: D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.runs/synth_1/runme.log
+[Thu Nov 24 13:46:44 2022] Launched impl_1...
+Run output will be captured here: D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319A28F10A
+open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2629.078 ; gain = 1016.016
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/GitHub/VTC/book_src_sch/Chapter07/VivadoProjects/sig_control/sig_control.runs/impl_1/sig_control.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 24 13:53:49 2022...

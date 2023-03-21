@@ -12,5 +12,6 @@ DiamondProjects/
 Vivado/
 projects_v2019.1/
 work/
+*.sim/
 *.wlf
 *.PrjPcbStructure

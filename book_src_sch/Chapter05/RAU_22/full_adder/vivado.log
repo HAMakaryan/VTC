@@ -1,0 +1,625 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Oct 18 09:25:04 2022
+# Process ID: 4456
+# Current directory: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13528 D:\GitHub\VTC\book_src_sch\Chapter05\RAU_22\full_adder\full_adder.xpr
+# Log file: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/vivado.log
+# Journal file: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.xpr
+INFO: [Project 1-313] Project file moved from 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU/full_adder' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 793.285 ; gain = 163.883
+update_compile_order -fileset sources_1
+set_property target_simulator Questa [current_project]
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+INFO: [Vivado 12-5682] Launching post-implementation timing simulation in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [USF-Questa-47] Finding simulator installation...
+INFO: [USF-Questa-50] Using simulator executables from 'C:/questasim64_2021.1/win64/vsim.exe'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1742.398 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1742.398 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1742.398 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:01:36 ; elapsed = 00:01:22 . Memory (MB): peak = 1856.047 ; gain = 986.684
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.sdf"
+INFO: [SIM-utils-36] Netlist generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.v
+INFO: [SIM-utils-37] SDF generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.sdf
+INFO: [USF-Questa-7] Finding pre-compiled libraries...
+CRITICAL WARNING: [USF-Questa-8] Failed to find the pre-compiled simulation library!
+INFO: [USF-Questa-9]  Recommendation:- Please follow these instructions to resolve this issue:-
+ - set the 'COMPXLIB.QUESTA_COMPILED_LIBRARY_DIR' project property to the directory where Xilinx simulation libraries are compiled for Questa, or
+ - set the 'MODELSIM' environment variable to point to the modelsim.ini file, or
+ - set the 'WD_MGC' environment variable to point to the directory containing the modelsim.ini file
+INFO: [SIM-utils-54] Inspecting design source files for 'full_adder_tb' in fileset 'sim_1'...
+INFO: [USF-Questa-2] Questa::Compile design
+INFO: [USF-Questa-15] Creating automatic 'do' files...
+INFO: [USF-Questa-69] Executing 'COMPILE and ANALYZE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_tb_compile.do}
+# QuestaSim-64 vmap 2021.1 Lib Mapping Utility 2021.01 Jan 19 2021
+# vmap xil_defaultlib questa_lib/msim/xil_defaultlib 
+# Modifying C:/questasim64_2021.1/win64/../modelsim.ini
+# ** Warning: (vlog-159) Mode option -64 is not supported in this context and will be ignored.
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 09:28:36 on Oct 18,2022
+# vlog -64 -incr -work xil_defaultlib full_adder_tb_time_impl.v ../../../../../../full_adder.v ../../../../../../full_adder_tb.v 
+# -- Compiling module full_adder_4bit
+# -- Compiling module glbl
+# -- Compiling module full_adder
+# -- Compiling module full_adder_tb
+# 
+# Top level modules:
+# 	full_adder_4bit
+# 	glbl
+# 	full_adder_tb
+# End time: 09:28:36 on Oct 18,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 1873.445 ; gain = 0.000
+INFO: [USF-Questa-69] 'compile' step finished in '11' seconds
+INFO: [USF-Questa-3] Questa::Elaborate design
+INFO: [USF-Questa-69] Executing 'ELABORATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_tb_elaborate.do}
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 09:28:47 on Oct 18,2022
+# vopt "+acc=npr" -L xil_defaultlib -L simprims_ver -L secureip -work xil_defaultlib xil_defaultlib.full_adder_tb xil_defaultlib.glbl -o full_adder_tb_opt 
+# 
+# Top level modules:
+# 	full_adder_tb
+# 	glbl
+# 
+# Analyzing design...
+# -- Loading module full_adder_tb
+# -- Loading module glbl
+# -- Loading module full_adder
+# Optimizing 3 design-units (inlining 0/3 module instances):
+# ** Error (suppressible): (vopt-19) Failed to access library 'simprims_ver' at "simprims_ver".
+# No such file or directory. (errno = ENOENT)
+# ** Error (suppressible): (vopt-19) Failed to access library 'secureip' at "secureip".
+# No such file or directory. (errno = ENOENT)
+# -- Optimizing module glbl(fast)
+# -- Optimizing module full_adder_tb(fast)
+# -- Optimizing module full_adder(fast)
+# End time: 09:28:47 on Oct 18,2022, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# child process exited abnormally
+# Error in macro ./full_adder_tb_elaborate.do line 9
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 09:28:47 on Oct 18,2022
+# vopt "+acc=npr" -L xil_defaultlib -L simprims_ver -L secureip -work xil_defaultlib xil_defaultlib.full_adder_tb xil_defaultlib.glbl -o full_adder_tb_opt 
+# 
+# Top level modules:
+# 	full_adder_tb
+# 	glbl
+# 
+# Analyzing design...
+# -- Loading module full_adder_tb
+# -- Loading module glbl
+# -- Loading module full_adder
+# Optimizing 3 design-units (inlining 0/3 module instances):
+# ** Error (suppressible): (vopt-19) Failed to access library 'simprims_ver' at "simprims_ver".
+# No such file or directory. (errno = ENOENT)
+# ** Error (suppressible): (vopt-19) Failed to access library 'secureip' at "secureip".
+# No such file or directory. (errno = ENOENT)
+# -- Optimizing module glbl(fast)
+# -- Optimizing module full_adder_tb(fast)
+# -- Optimizing module full_adder(fast)
+# End time: 09:28:47 on Oct 18,2022, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# child process exited abnormally
+#     while executing
+# "exec <nul: {C:\questasim64_2021.1\win64\vopt.EXE} -64 +acc=npr -L xil_defaultlib -L simprims_ver -L secureip -work xil_defaultlib xil_defaultlib.full_..."
+#     ("uplevel" body line 1)
+#     invoked from within
+# "uplevel 1 exec $redir $new [lrange $args 1 end]"
+#     (procedure "::unknown" line 47)
+#     invoked from within
+# "C:\\questasim64_2021.1\\win64\\vopt -64 +acc=npr -L xil_defaultlib -L simprims_ver -L secureip -work xil_defaultlib xil_defaultlib.full_adder_tb xil_d..."
+QuestaSim> INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run_program: Time (s): cpu = 00:00:12 ; elapsed = 00:01:08 . Memory (MB): peak = 1873.445 ; gain = 0.000
+INFO: [Common 17-344] 'run_program' was cancelled
+INFO: [Vivado 12-5357] 'elaborate' step aborted
+launch_simulation: Time (s): cpu = 00:01:56 ; elapsed = 00:02:44 . Memory (MB): peak = 1873.445 ; gain = 1004.082
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+set_property compxlib.questa_compiled_library_dir D:/Xilinx_CompLib_19_1 [current_project]
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+INFO: [Vivado 12-5682] Launching post-implementation timing simulation in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [USF-Questa-47] Finding simulator installation...
+INFO: [USF-Questa-50] Using simulator executables from 'C:/questasim64_2021.1/win64/vsim.exe'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.sdf"
+INFO: [SIM-utils-36] Netlist generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.v
+INFO: [SIM-utils-37] SDF generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.sdf
+INFO: [USF-Questa-7] Finding pre-compiled libraries...
+INFO: [USF_Questa-11] File 'D:/Xilinx_CompLib_19_1/modelsim.ini' copied to run dir:'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [SIM-utils-54] Inspecting design source files for 'full_adder_tb' in fileset 'sim_1'...
+INFO: [USF-Questa-2] Questa::Compile design
+INFO: [USF-Questa-15] Creating automatic 'do' files...
+INFO: [USF-Questa-69] Executing 'COMPILE and ANALYZE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_tb_compile.do}
+# ** Warning: (vlib-34) Library already exists at "questa_lib/work".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim/xil_defaultlib".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vmap 2021.1 Lib Mapping Utility 2021.01 Jan 19 2021
+# vmap xil_defaultlib questa_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# ** Warning: (vlog-159) Mode option -64 is not supported in this context and will be ignored.
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 09:30:50 on Oct 18,2022
+# vlog -64 -incr -work xil_defaultlib full_adder_tb_time_impl.v ../../../../../../full_adder.v ../../../../../../full_adder_tb.v 
+# -- Skipping module full_adder_4bit
+# -- Skipping module glbl
+# -- Skipping module full_adder
+# -- Skipping module full_adder_tb
+# 
+# Top level modules:
+# 	full_adder_4bit
+# 	glbl
+# 	full_adder_tb
+# End time: 09:30:50 on Oct 18,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 1879.379 ; gain = 0.000
+INFO: [USF-Questa-69] 'compile' step finished in '10' seconds
+INFO: [USF-Questa-3] Questa::Elaborate design
+INFO: [USF-Questa-69] Executing 'ELABORATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_tb_elaborate.do}
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 09:31:00 on Oct 18,2022
+# vopt "+acc=npr" -L xil_defaultlib -L simprims_ver -L secureip -work xil_defaultlib xil_defaultlib.full_adder_tb xil_defaultlib.glbl -o full_adder_tb_opt 
+# 
+# Top level modules:
+# 	full_adder_tb
+# 	glbl
+# 
+# Analyzing design...
+# -- Loading module full_adder_tb
+# -- Loading module glbl
+# -- Loading module full_adder
+# Optimizing 3 design-units (inlining 0/3 module instances):
+# -- Optimizing module glbl(fast)
+# -- Optimizing module full_adder_tb(fast)
+# -- Optimizing module full_adder(fast)
+# Optimized design name is full_adder_tb_opt
+# End time: 09:31:01 on Oct 18,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1879.379 ; gain = 0.000
+INFO: [USF-Questa-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-Questa-4] Questa::Simulate design
+INFO: [USF-Questa-69] Executing 'SIMULATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Program launched (PID=3956)
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:23 . Memory (MB): peak = 1879.379 ; gain = 5.934
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Tue Oct 18 09:33:56 2022] Launched synth_1...
+Run output will be captured here: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Tue Oct 18 09:35:36 2022] Launched impl_1...
+Run output will be captured here: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.runs/impl_1/runme.log
+close_design
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+INFO: [Vivado 12-5682] Launching post-implementation timing simulation in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [USF-Questa-47] Finding simulator installation...
+INFO: [USF-Questa-50] Using simulator executables from 'C:/questasim64_2021.1/win64/vsim.exe'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1879.379 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1879.379 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1879.379 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.sdf"
+INFO: [SIM-utils-36] Netlist generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.v
+INFO: [SIM-utils-37] SDF generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.sdf
+INFO: [USF-Questa-7] Finding pre-compiled libraries...
+INFO: [USF_Questa-11] File 'D:/Xilinx_CompLib_19_1/modelsim.ini' copied to run dir:'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [SIM-utils-54] Inspecting design source files for 'full_adder_tb' in fileset 'sim_1'...
+INFO: [USF-Questa-2] Questa::Compile design
+INFO: [USF-Questa-15] Creating automatic 'do' files...
+INFO: [USF-Questa-69] Executing 'COMPILE and ANALYZE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_tb_compile.do}
+# ** Warning: (vlib-34) Library already exists at "questa_lib/work".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim/xil_defaultlib".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vmap 2021.1 Lib Mapping Utility 2021.01 Jan 19 2021
+# vmap xil_defaultlib questa_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# ** Warning: (vlog-159) Mode option -64 is not supported in this context and will be ignored.
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 09:40:59 on Oct 18,2022
+# vlog -64 -incr -work xil_defaultlib full_adder_tb_time_impl.v ../../../../../../full_adder.v ../../../../../../full_adder_tb.v 
+# -- Skipping module full_adder_4bit
+# -- Skipping module glbl
+# -- Skipping module full_adder
+# -- Skipping module full_adder_tb
+# 
+# Top level modules:
+# 	full_adder_4bit
+# 	glbl
+# 	full_adder_tb
+# End time: 09:41:00 on Oct 18,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1884.066 ; gain = 0.000
+INFO: [USF-Questa-69] 'compile' step finished in '11' seconds
+INFO: [USF-Questa-3] Questa::Elaborate design
+INFO: [USF-Questa-69] Executing 'ELABORATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_tb_elaborate.do}
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 09:41:10 on Oct 18,2022
+# vopt "+acc=npr" -L xil_defaultlib -L simprims_ver -L secureip -work xil_defaultlib xil_defaultlib.full_adder_tb xil_defaultlib.glbl -o full_adder_tb_opt 
+# 
+# Top level modules:
+# 	full_adder_tb
+# 	glbl
+# 
+# Analyzing design...
+# -- Loading module full_adder_tb
+# -- Loading module glbl
+# -- Loading module full_adder
+# Incremental compilation check found no design-units have changed.
+# Optimized design name is full_adder_tb_opt
+# End time: 09:41:10 on Oct 18,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1884.066 ; gain = 0.000
+INFO: [USF-Questa-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-Questa-4] Questa::Simulate design
+INFO: [USF-Questa-69] Executing 'SIMULATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Program launched (PID=1768)
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 1884.066 ; gain = 4.688
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+INFO: [Vivado 12-5682] Launching post-implementation timing simulation in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [USF-Questa-47] Finding simulator installation...
+INFO: [USF-Questa-50] Using simulator executables from 'C:/questasim64_2021.1/win64/vsim.exe'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.sdf"
+INFO: [SIM-utils-36] Netlist generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.v
+INFO: [SIM-utils-37] SDF generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_tb_time_impl.sdf
+INFO: [USF-Questa-7] Finding pre-compiled libraries...
+INFO: [USF_Questa-11] File 'D:/Xilinx_CompLib_19_1/modelsim.ini' copied to run dir:'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [SIM-utils-54] Inspecting design source files for 'full_adder_tb' in fileset 'sim_1'...
+INFO: [USF-Questa-2] Questa::Compile design
+INFO: [USF-Questa-15] Creating automatic 'do' files...
+INFO: [USF-Questa-69] Executing 'COMPILE and ANALYZE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_tb_compile.do}
+# ** Warning: (vlib-34) Library already exists at "questa_lib/work".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim/xil_defaultlib".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vmap 2021.1 Lib Mapping Utility 2021.01 Jan 19 2021
+# vmap xil_defaultlib questa_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# ** Warning: (vlog-159) Mode option -64 is not supported in this context and will be ignored.
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 10:06:29 on Oct 18,2022
+# vlog -64 -incr -work xil_defaultlib full_adder_tb_time_impl.v ../../../../../../full_adder.v ../../../../../../full_adder_tb.v 
+# -- Skipping module full_adder_4bit
+# -- Skipping module glbl
+# -- Skipping module full_adder
+# -- Skipping module full_adder_tb
+# 
+# Top level modules:
+# 	full_adder_4bit
+# 	glbl
+# 	full_adder_tb
+# End time: 10:06:29 on Oct 18,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1885.695 ; gain = 0.000
+INFO: [USF-Questa-69] 'compile' step finished in '11' seconds
+INFO: [USF-Questa-3] Questa::Elaborate design
+INFO: [USF-Questa-69] Executing 'ELABORATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_tb_elaborate.do}
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 10:06:39 on Oct 18,2022
+# vopt "+acc=npr" -L xil_defaultlib -L simprims_ver -L secureip -work xil_defaultlib xil_defaultlib.full_adder_tb xil_defaultlib.glbl -o full_adder_tb_opt 
+# 
+# Top level modules:
+# 	full_adder_tb
+# 	glbl
+# 
+# Analyzing design...
+# -- Loading module full_adder_tb
+# -- Loading module glbl
+# -- Loading module full_adder
+# Incremental compilation check found no design-units have changed.
+# Optimized design name is full_adder_tb_opt
+# End time: 10:06:40 on Oct 18,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1885.695 ; gain = 0.000
+INFO: [USF-Questa-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-Questa-4] Questa::Simulate design
+INFO: [USF-Questa-69] Executing 'SIMULATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Program launched (PID=8412)
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:23 . Memory (MB): peak = 1885.695 ; gain = 1.629
+export_ip_user_files -of_objects  [get_files D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder_tb.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder_tb.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder_4bit_tb.v
+set_property used_in_simulation true [get_files  D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder_4bit.v]
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+INFO: [Vivado 12-5682] Launching post-implementation timing simulation in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [USF-Questa-47] Finding simulator installation...
+INFO: [USF-Questa-50] Using simulator executables from 'C:/questasim64_2021.1/win64/vsim.exe'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_4bit_tb_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_4bit_tb_time_impl.sdf"
+INFO: [SIM-utils-36] Netlist generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_4bit_tb_time_impl.v
+INFO: [SIM-utils-37] SDF generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_4bit_tb_time_impl.sdf
+INFO: [USF-Questa-7] Finding pre-compiled libraries...
+INFO: [USF_Questa-11] File 'D:/Xilinx_CompLib_19_1/modelsim.ini' copied to run dir:'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [SIM-utils-54] Inspecting design source files for 'full_adder_4bit_tb' in fileset 'sim_1'...
+INFO: [USF-Questa-2] Questa::Compile design
+INFO: [USF-Questa-15] Creating automatic 'do' files...
+INFO: [USF-Questa-69] Executing 'COMPILE and ANALYZE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_4bit_tb_compile.do}
+# ** Warning: (vlib-34) Library already exists at "questa_lib/work".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim/xil_defaultlib".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vmap 2021.1 Lib Mapping Utility 2021.01 Jan 19 2021
+# vmap xil_defaultlib questa_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# ** Warning: (vlog-159) Mode option -64 is not supported in this context and will be ignored.
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 10:13:41 on Oct 18,2022
+# vlog -64 -incr -work xil_defaultlib full_adder_4bit_tb_time_impl.v ../../../../../../full_adder_4bit_tb.v 
+# -- Compiling module full_adder_4bit
+# -- Compiling module glbl
+# -- Compiling module full_adder_4bit_tb
+# 
+# Top level modules:
+# 	glbl
+# 	full_adder_4bit_tb
+# End time: 10:13:41 on Oct 18,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1893.391 ; gain = 0.000
+INFO: [USF-Questa-69] 'compile' step finished in '11' seconds
+INFO: [USF-Questa-3] Questa::Elaborate design
+INFO: [USF-Questa-69] Executing 'ELABORATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_4bit_tb_elaborate.do}
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 10:13:52 on Oct 18,2022
+# vopt "+acc=npr" -L xil_defaultlib -L simprims_ver -L secureip -work xil_defaultlib xil_defaultlib.full_adder_4bit_tb xil_defaultlib.glbl -o full_adder_4bit_tb_opt 
+# 
+# Top level modules:
+# 	full_adder_4bit_tb
+# 	glbl
+# 
+# Analyzing design...
+# -- Loading module full_adder_4bit_tb
+# -- Loading module glbl
+# -- Loading module full_adder_4bit
+# -- Loading module simprims_ver.IBUF
+# -- Loading module simprims_ver.OBUF
+# -- Loading module simprims_ver.LUT3
+# -- Loading UDP simprims_ver.x_lut3_mux8
+# -- Loading module simprims_ver.LUT2
+# -- Loading UDP simprims_ver.x_lut2_mux4
+# -- Loading module simprims_ver.LUT4
+# -- Loading module simprims_ver.LUT6
+# 
+# Waiting for 1 SDF compilation to complete...
+# -- Compiling typ SDF from full_adder_4bit_tb_time_impl.sdf
+# Finished SDF compilation.
+# 
+# Optimizing 13 design-units (inlining 0/3 module instances, 0/19 cell instances, 3/3 UDP instances):
+# -- Optimizing module simprims_ver.LUT6(fast)
+# -- Optimizing module simprims_ver.LUT6(fast__1)
+# -- Optimizing module simprims_ver.LUT4(fast)
+# -- Inlining UDP simprims_ver.x_lut3_mux8
+# -- Optimizing module simprims_ver.LUT3(fast__1)
+# -- Optimizing module simprims_ver.LUT3(fast)
+# -- Optimizing module full_adder_4bit(fast)
+# -- Optimizing module glbl(fast)
+# -- Optimizing module simprims_ver.IBUF(fast)
+# -- Inlining UDP simprims_ver.x_lut2_mux4
+# -- Optimizing module simprims_ver.LUT2(fast)
+# -- Optimizing module full_adder_4bit_tb(fast)
+# -- Optimizing module simprims_ver.OBUF(fast)
+# Optimized design name is full_adder_4bit_tb_opt
+# End time: 10:13:53 on Oct 18,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1893.391 ; gain = 0.000
+INFO: [USF-Questa-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-Questa-4] Questa::Simulate design
+INFO: [USF-Questa-69] Executing 'SIMULATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Program launched (PID=5076)
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:23 . Memory (MB): peak = 1893.391 ; gain = 7.695
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+INFO: [Vivado 12-5682] Launching post-implementation timing simulation in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [USF-Questa-47] Finding simulator installation...
+INFO: [USF-Questa-50] Using simulator executables from 'C:/questasim64_2021.1/win64/vsim.exe'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_4bit_tb_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_4bit_tb_time_impl.sdf"
+INFO: [SIM-utils-36] Netlist generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_4bit_tb_time_impl.v
+INFO: [SIM-utils-37] SDF generated:D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa/full_adder_4bit_tb_time_impl.sdf
+INFO: [USF-Questa-7] Finding pre-compiled libraries...
+INFO: [USF_Questa-11] File 'D:/Xilinx_CompLib_19_1/modelsim.ini' copied to run dir:'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+INFO: [SIM-utils-54] Inspecting design source files for 'full_adder_4bit_tb' in fileset 'sim_1'...
+INFO: [USF-Questa-2] Questa::Compile design
+INFO: [USF-Questa-15] Creating automatic 'do' files...
+INFO: [USF-Questa-69] Executing 'COMPILE and ANALYZE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_4bit_tb_compile.do}
+# ** Warning: (vlib-34) Library already exists at "questa_lib/work".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim/xil_defaultlib".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vmap 2021.1 Lib Mapping Utility 2021.01 Jan 19 2021
+# vmap xil_defaultlib questa_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# ** Warning: (vlog-159) Mode option -64 is not supported in this context and will be ignored.
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 10:43:15 on Oct 18,2022
+# vlog -64 -incr -work xil_defaultlib full_adder_4bit_tb_time_impl.v ../../../../../../full_adder_4bit_tb.v 
+# -- Skipping module full_adder_4bit
+# -- Skipping module glbl
+# -- Compiling module full_adder_4bit_tb
+# 
+# Top level modules:
+# 	glbl
+# 	full_adder_4bit_tb
+# End time: 10:43:15 on Oct 18,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 1893.871 ; gain = 0.000
+INFO: [USF-Questa-69] 'compile' step finished in '12' seconds
+INFO: [USF-Questa-3] Questa::Elaborate design
+INFO: [USF-Questa-69] Executing 'ELABORATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Reading pref.tcl
+
+# 2021.1
+
+# do {full_adder_4bit_tb_elaborate.do}
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 10:43:30 on Oct 18,2022
+# vopt "+acc=npr" -L xil_defaultlib -L simprims_ver -L secureip -work xil_defaultlib xil_defaultlib.full_adder_4bit_tb xil_defaultlib.glbl -o full_adder_4bit_tb_opt 
+# 
+# Top level modules:
+# 	full_adder_4bit_tb
+# 	glbl
+# 
+# Analyzing design...
+# -- Loading module full_adder_4bit_tb
+# -- Loading module glbl
+# -- Loading module full_adder_4bit
+# -- Loading module simprims_ver.IBUF
+# -- Loading module simprims_ver.OBUF
+# -- Loading module simprims_ver.LUT3
+# -- Loading UDP simprims_ver.x_lut3_mux8
+# -- Loading module simprims_ver.LUT2
+# -- Loading UDP simprims_ver.x_lut2_mux4
+# -- Loading module simprims_ver.LUT4
+# -- Loading module simprims_ver.LUT6
+# 
+# Waiting for 1 SDF compilation to complete...
+# -- Compiling typ SDF from full_adder_4bit_tb_time_impl.sdf
+# Finished SDF compilation.
+# 
+# Optimizing 13 design-units (inlining 0/3 module instances, 0/19 cell instances, 3/3 UDP instances):
+# -- Optimizing module simprims_ver.LUT6(fast)
+# -- Optimizing module simprims_ver.LUT6(fast__1)
+# -- Optimizing module simprims_ver.LUT4(fast)
+# -- Inlining UDP simprims_ver.x_lut3_mux8
+# -- Optimizing module simprims_ver.LUT3(fast__1)
+# -- Optimizing module simprims_ver.LUT3(fast)
+# -- Optimizing module full_adder_4bit(fast)
+# -- Optimizing module glbl(fast)
+# -- Optimizing module simprims_ver.IBUF(fast)
+# -- Inlining UDP simprims_ver.x_lut2_mux4
+# -- Optimizing module simprims_ver.LUT2(fast)
+# -- Optimizing module full_adder_4bit_tb(fast)
+# -- Optimizing module simprims_ver.OBUF(fast)
+# Optimized design name is full_adder_4bit_tb_opt
+# End time: 10:43:30 on Oct 18,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+run_program: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1893.871 ; gain = 0.000
+INFO: [USF-Questa-69] 'elaborate' step finished in '15' seconds
+INFO: [USF-Questa-4] Questa::Simulate design
+INFO: [USF-Questa-69] Executing 'SIMULATE' step in 'D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.sim/sim_1/impl/timing/questa'
+Program launched (PID=10668)
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1893.871 ; gain = 0.480
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 18 12:16:00 2022...

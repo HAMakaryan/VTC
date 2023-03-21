@@ -1,0 +1,12 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=book_src_sch\Chapter05\DXP\Gate_Level_Modeling\Gate_Level_Modeling.PrjPcb
+[Project2]
+ProjectPath=..\ITC\A_Guide_to_Digital_Design_and_Synthesis\scematics\06_Dataflow_Modeling\06_Dataflow_Modeling.PrjPcb
+[Project3]
+ProjectPath=book_src_sch\Chapter06\DXP\JK_FF\JK_FF.PrjPcb
+[Project4]
+ProjectPath=book_src_sch\Chapter04\drawings\04_02_SR_Latch\04_02_SR_Latch.PrjPcb
+[Project5]
+ProjectPath=projects\DXP_Projects\LCD_BS\LCD_BS.PrjPcb

@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Oct 18 09:25:04 2022
+# Process ID: 4456
+# Current directory: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13528 D:\GitHub\VTC\book_src_sch\Chapter05\RAU_22\full_adder\full_adder.xpr
+# Log file: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/vivado.log
+# Journal file: D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder/full_adder.xpr
+update_compile_order -fileset sources_1
+set_property target_simulator Questa [current_project]
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+set_property compxlib.questa_compiled_library_dir D:/Xilinx_CompLib_19_1 [current_project]
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+close_design
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+export_ip_user_files -of_objects  [get_files D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder_tb.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder_tb.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder_4bit_tb.v
+set_property used_in_simulation true [get_files  D:/GitHub/VTC/book_src_sch/Chapter05/RAU_22/full_adder_4bit.v]
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing
+launch_simulation -install_path C:/questasim64_2021.1/win64 -mode post-implementation -type timing

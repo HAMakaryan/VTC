@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Oct 19 10:07:55 2022
+# Process ID: 2020
+# Current directory: D:/GitHub/VTC/book_src_sch/Chapter05/M1_22/vivado_m4_1/vivado_m4_1.runs/impl_1
+# Command line: vivado.exe -log mux_4in.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source mux_4in.tcl -notrace
+# Log file: D:/GitHub/VTC/book_src_sch/Chapter05/M1_22/vivado_m4_1/vivado_m4_1.runs/impl_1/mux_4in.vdi
+# Journal file: D:/GitHub/VTC/book_src_sch/Chapter05/M1_22/vivado_m4_1/vivado_m4_1.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source mux_4in.tcl -notrace

@@ -1,5 +1,3 @@
-`timescale 1us/100ns
-
 `define SIMULATION
 
 
